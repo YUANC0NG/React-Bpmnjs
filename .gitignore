@@ -1,18 +1,27 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
-
-# Other files and folders
-.settings/
-
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
-
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+/node_modules
+/packages/*/lib
+/packages/*/dist
+/packages/*/node_modules
+/packages/deps/bundles/node_modules
+/coverage
+/.nyc_output
+/.changelog
+/dist
+.DS_Store
+.umi
+.umi-production
+.umi-test
+**/fixtures/**/dist
+.now
+**/*.less.d.ts
+**/*.css.d.ts
+report.*.json
+output.txt
+/examples/*/dist
+/packages/bundler-webpack/src/fixtures/outputPath/bar
+/examples/**/node_modules
+/examples/*/yarn.lock
+/examples/*/app/public
+/examples/*/logs
+/examples/*/run
+/examples/*/.idea
