@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import BpmnModeler from 'bpmn-js/lib/Modeler';
-import BpmnToolBar from './ToolBar';
-import PropertyPanel from './PropertyPanel';
-import BpmData from './BpmData';
-import Xml from './xml';
-import './index.less';
+import React, { Component } from "react";
+import BpmnModeler from "bpmn-js/lib/Modeler";
+import BpmnToolBar from "./ToolBar";
+import PropertyPanel from "./PropertyPanel";
+import BpmData from "./BpmData";
+import Xml from "./xml";
+import "./index.less";
 
 class BpmnMain extends Component {
   /**
@@ -16,7 +16,7 @@ class BpmnMain extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      bpmn: null,
+      bpmn: null, //
       bpmData: new BpmData(),
     };
   }
@@ -30,7 +30,7 @@ class BpmnMain extends Component {
     this.setState(
       {
         bpmn: new BpmnModeler({
-          container: document.getElementById('canvas'),
+          container: document.getElementById("canvas"),
           keyboard: { bindTo: window },
         }),
       },
@@ -40,7 +40,7 @@ class BpmnMain extends Component {
             console.error(err);
           }
         });
-      },
+      }
     );
   };
 
@@ -48,13 +48,13 @@ class BpmnMain extends Component {
   customPalette = () => {
     try {
       // 获取 bpmn 设计器实例
-      const canvas = document.getElementById('canvas');
+      const canvas = document.getElementById("canvas");
       const djsPalette = canvas.children[0].children[1].children[4];
       const djsPalStyle = {
-        width: '130px',
-        padding: '5px',
-        background: 'white',
-        left: '20px',
+        width: "130px",
+        padding: "5px",
+        background: "white",
+        left: "20px",
         borderRadius: 0,
       };
       for (var key in djsPalStyle) {
@@ -62,28 +62,28 @@ class BpmnMain extends Component {
       }
       const palette = djsPalette.children[0];
       const allGroups = palette.children;
-      allGroups[0].style['display'] = 'none';
+      allGroups[0].style["display"] = "none";
       // 修改控件样式
       for (var gKey in allGroups) {
         const group = allGroups[gKey];
         for (var cKey in group.children) {
           const control = group.children[cKey];
           const controlStyle = {
-            display: 'flex',
-            justifyContent: 'flex-start',
-            alignItems: 'center',
-            width: '100%',
-            padding: '5px',
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "center",
+            width: "100%",
+            padding: "5px",
           };
           if (
             control.className &&
             control.dataset &&
-            control.className.indexOf('entry') !== -1
+            control.className.indexOf("entry") !== -1
           ) {
             const controlProps = this.state.bpmData.getControl(
-              control.dataset.action,
+              control.dataset.action
             );
-            control.innerHTML = `<div style='font-size: 14px;font-weight:500;margin-left:15px;'>${controlProps['title']}</div>`;
+            control.innerHTML = `<div style='font-size: 14px;font-weight:500;margin-left:15px;'>${controlProps["title"]}</div>`;
             for (var csKey in controlStyle) {
               control.style[csKey] = controlStyle[csKey];
             }
