@@ -14,16 +14,16 @@ class PropertyPanel extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: [], // 可选用户列表
-      roles: [], // 可选角色列表
-      element: {}, // 节点事件对象
+      users: [],                // 可选用户列表
+      roles: [],                // 可选角色列表
+      element: {},              // 节点事件对象
       elementInfo: {
-        // 节点属性信息
-        id: "", // 节点id
-        name: "", // 节点名称
-        $type: "", // 节点类型
-        approvalType: "user", // 审批类型
-        approvalValue: "", // 审批人/角色
+                                // 节点属性信息
+        id: "",                 // 节点id
+        name: "",               // 节点名称
+        $type: "",              // 节点类型
+        approvalType: "user",   // 审批类型
+        approvalValue: "",      // 审批人/角色
         FlowLineType: "normal", // 流程线属性类型（可设为默认或条件分支，或不设置）
       },
     };
